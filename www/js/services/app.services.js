@@ -53,7 +53,6 @@
     function GetterAndSetter(){
 
     	var comicsData = '';
-    	var regData = '';
 
     	var service = {
     		getComics: getComics,
