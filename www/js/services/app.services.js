@@ -22,7 +22,7 @@
       // consulta API para obtener comics.
       function getComics() {
         var publicKey = 'ca30d846c7e001e9271cdcdde3b27b19';
-        var privateKey = '5e4abae1705fec612c01c15619375e93f1661779';
+        var privateKey = ''; // aquí key privada entregada por la API
         var timestamp = Date.now();
         var params = timestamp + privateKey + publicKey;
         var hash = md5(params);
