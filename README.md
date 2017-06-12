@@ -5,7 +5,7 @@
 Aplicación que lista comics consumiendo [*API MARVEL*](http://developer.marvel.com/), permitiendo filtrar por título y año, además
 de entregar mayor información al clickear en cada comic.
 
-__NOTA:__ **se recomienda visualizar desde un móvil**
+**_NOTA:_** **se recomienda visualizar desde un móvil.**
 
 ## Tecnologías
 
