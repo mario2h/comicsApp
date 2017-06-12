@@ -27,7 +27,7 @@
         var params = timestamp + privateKey + publicKey;
         var hash = md5(params);
 
-        var apiUrl = 'http://gateway.marvel.com/v1/public/comics?limit=50&ts='+timestamp+'&apikey='+publicKey+'&hash='+hash;
+        var apiUrl = 'https://gateway.marvel.com/v1/public/comics?limit=50&ts='+timestamp+'&apikey='+publicKey+'&hash='+hash;
 
         var d = $q.defer();
 
