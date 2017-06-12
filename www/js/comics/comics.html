@@ -1,0 +1,30 @@
+<ion-view view-title="Comics">
+  <ion-nav-buttons side="right">
+      <button ng-click="ctrl.buscar = !ctrl.buscar"
+        ng-class="{'button button-icon button-clear ion-search': !ctrl.buscar,
+                'button button-icon button-clear ion-close-circled': ctrl.buscar}">
+      </button>
+  </ion-nav-buttons>
+  <div ng-show="ctrl.buscar" class="bar bar-subheader item-input-inset bar-light">
+    <label class="item-input-wrapper">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="ctrl.busqueda" placeholder="Buscar título, año...">
+    </label>
+  </div>
+    <!-- content listas -->
+    <ion-content ng-class="{'search-bar': ctrl.buscar}" ng-show="ctrl.listComics.length > 0">
+        <ion-list>
+          <ion-item ng-repeat="comic in ctrl.listComics | filter: ctrl.busqueda" ng-click="ctrl.buscar = false; ctrl.busqueda = ''" class="item item-thumbnail-left" href="#/app/details/{{comic.id}}">
+            <img src="{{comic.thumbnail.path +'/standard_medium.jpg'}}">
+            <h2>{{comic.title}}</h2>
+            <p>{{comic.format}} • {{comic.prices[0].price | currency }}</p>
+          </ion-item>
+        </ion-list>
+    </ion-content>
+    <!-- fin content listas -->
+    <!--content spinner-->
+    <ion-content ng-show="ctrl.listComics.length === 0" class="text-center">
+      <ion-spinner icon="circles"></ion-spinner> Cargando...
+    </ion-content>
+    <!--fin content spinner-->
+</ion-view>

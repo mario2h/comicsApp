@@ -1,0 +1,30 @@
+<ion-view view-title="Detalles Comics">
+    <ion-content>
+      <div class="list card">
+        <div class="item item-avatar">
+          <img src="{{ctrl.comicSelect.thumbnail.path+'/standard_medium.jpg'}}">
+          <h2>{{ctrl.comicSelect.title}}</h2>
+          <p>Últ. modificación: {{ctrl.comicSelect.modified | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <div class="item item-body">
+          <img class="full-image" src="{{ctrl.comicSelect.thumbnail.path+'/landscape_medium.jpg'}}">
+          <h3>Descripción</h3>
+          <p>{{ctrl.comicSelect.description}}</p>
+          <h3>Personajes</h3>
+          <div>
+            <ul ng-if="ctrl.comicSelect.characters.items.length > 0">
+              <li ng-repeat="character in ctrl.comicSelect.characters.items">• {{character.name}}</li>
+            </ul>
+            <p ng-if="ctrl.comicSelect.characters.items.length === 0">Personajes no disponibles</p>
+          </div>
+          <h3>Serie </h3>
+          <div>
+            <ul ng-if="ctrl.comicSelect.series.name !== undefined">
+              <li>{{ctrl.comicSelect.series.name}}</li>
+            </ul>
+            <p ng-if="ctrl.comicSelect.series.name === undefined">No disponible</p>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+</ion-nav-view>
