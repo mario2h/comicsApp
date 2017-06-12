@@ -1,6 +1,6 @@
 <ion-view view-title="Comics">
   <ion-nav-buttons side="right">
-      <button ng-click="ctrl.buscar = !ctrl.buscar"
+      <button ng-click="ctrl.buscar = !ctrl.buscar; ctrl.busqueda = ''"
         ng-class="{'button button-icon button-clear ion-search': !ctrl.buscar,
                 'button button-icon button-clear ion-close-circled': ctrl.buscar}">
       </button>
